@@ -1,6 +1,0 @@
-Testsuite: simpledb.CatalogTest
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 sec
-
-Testcase: getTupleDesc took 0.029 sec
-Testcase: getTableId took 0.001 sec
-Testcase: getDbFile took 0.001 sec
