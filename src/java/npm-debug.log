@@ -1,0 +1,193 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'how2' ]
+2 info using npm@2.14.4
+3 info using node@v4.1.1
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'how2', null ]
+7 verbose cache add spec how2
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'how2',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'how2',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed how2@*
+10 verbose addNamed "*" is a valid semver range for how2
+11 silly addNameRange { name: 'how2', range: '*', hasData: false }
+12 silly mapToRegistry name how2
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/how2
+16 verbose addNameRange registry:https://registry.npmjs.org/how2 not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/how2
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 11:32:13 PM
+20 verbose request id 0f4cb8aa12a40a72
+21 http request GET https://registry.npmjs.org/how2
+22 http 200 https://registry.npmjs.org/how2
+23 silly get cb [ 200,
+23 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 silly get     etag: '"BCNVC5ZNANPWPTJTWN4J1QVK1"',
+23 silly get     'content-type': 'application/json',
+23 silly get     'cache-control': 'max-age=300',
+23 silly get     'content-length': '15533',
+23 silly get     'accept-ranges': 'bytes',
+23 silly get     date: 'Sun, 28 Feb 2016 04:32:14 GMT',
+23 silly get     via: '1.1 varnish',
+23 silly get     age: '0',
+23 silly get     connection: 'keep-alive',
+23 silly get     'x-served-by': 'cache-iad2138-IAD',
+23 silly get     'x-cache': 'MISS',
+23 silly get     'x-cache-hits': '0',
+23 silly get     'x-timer': 'S1456633934.242374,VS0,VE487',
+23 silly get     vary: 'Accept' } ]
+24 verbose get saving how2 to /Users/lyc/.npm/registry.npmjs.org/how2/.cache.json
+25 silly addNameRange number 2 { name: 'how2', range: '*', hasData: true }
+26 silly addNameRange versions [ 'how2',
+26 silly addNameRange   [ '1.0.0', '1.0.1', '1.0.2', '1.0.4', '1.0.5', '1.0.7', '1.0.8' ] ]
+27 silly addNamed how2@1.0.8
+28 verbose addNamed "1.0.8" is a plain semver version for how2
+29 silly mapToRegistry name how2
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/how2
+33 verbose addRemoteTarball https://registry.npmjs.org/how2/-/how2-1.0.8.tgz not in flight; adding
+34 verbose addRemoteTarball [ 'https://registry.npmjs.org/how2/-/how2-1.0.8.tgz',
+34 verbose addRemoteTarball   '9c4abd6ad9214b2a55d878c912ce9536c895f398' ]
+35 info retry fetch attempt 1 at 11:32:14 PM
+36 info attempt registry request try #1 at 11:32:14 PM
+37 http fetch GET https://registry.npmjs.org/how2/-/how2-1.0.8.tgz
+38 http fetch 200 https://registry.npmjs.org/how2/-/how2-1.0.8.tgz
+39 silly fetchAndShaCheck shasum 9c4abd6ad9214b2a55d878c912ce9536c895f398
+40 verbose addTmpTarball /var/folders/y2/tf_lmqcx543dsjnlv4rjzk300000gn/T/npm-53085-2efcfc51/registry.npmjs.org/how2/-/how2-1.0.8.tgz not in flight; adding
+41 verbose addTmpTarball already have metadata; skipping unpack for how2@1.0.8
+42 silly cache afterAdd how2@1.0.8
+43 verbose afterAdd /Users/lyc/.npm/how2/1.0.8/package/package.json not in flight; writing
+44 verbose afterAdd /Users/lyc/.npm/how2/1.0.8/package/package.json written
+45 silly install resolved [ { name: 'how2',
+45 silly install resolved     author:
+45 silly install resolved      { name: 'Claudio Santini',
+45 silly install resolved        email: 'hireclaudio@gmail.com',
+45 silly install resolved        url: 'https://www.linkedin.com/in/santinic' },
+45 silly install resolved     version: '1.0.8',
+45 silly install resolved     description: 'Uses Google and Stackoverflow to find how to do things on a Unix commmand line',
+45 silly install resolved     license: 'NON-MILITARY SOCIALIST LICENCE VERSION 1',
+45 silly install resolved     repository:
+45 silly install resolved      { type: 'git',
+45 silly install resolved        url: 'git+ssh://git@github.com/santinic/how2.git' },
+45 silly install resolved     keywords:
+45 silly install resolved      [ 'how2',
+45 silly install resolved        'howto',
+45 silly install resolved        'man',
+45 silly install resolved        'google',
+45 silly install resolved        'stackoverflow',
+45 silly install resolved        'stack overflow',
+45 silly install resolved        'stackexchange',
+45 silly install resolved        'stack exchange' ],
+45 silly install resolved     tags:
+45 silly install resolved      [ 'how2',
+45 silly install resolved        'howto',
+45 silly install resolved        'man',
+45 silly install resolved        'google',
+45 silly install resolved        'stackoverflow',
+45 silly install resolved        'stack overflow',
+45 silly install resolved        'stackexchange',
+45 silly install resolved        'stack exchange' ],
+45 silly install resolved     homepage: 'https://github.com/santinic/how2',
+45 silly install resolved     preferGlobal: true,
+45 silly install resolved     main: './index.js',
+45 silly install resolved     bin: { how2: './bin/how2' },
+45 silly install resolved     scripts: { start: './bin/how2 concatenate two files' },
+45 silly install resolved     dependencies:
+45 silly install resolved      { blessed: '^0.1.81',
+45 silly install resolved        colors: '^1.1.2',
+45 silly install resolved        devnull: '0.0.12',
+45 silly install resolved        ent: '^2.2.0',
+45 silly install resolved        google: '^1.4.0',
+45 silly install resolved        keypress: '^0.2.1',
+45 silly install resolved        lodash: '^4.3.0',
+45 silly install resolved        marked: '^0.3.3',
+45 silly install resolved        'marked-terminal': '^1.6.1',
+45 silly install resolved        nconf: '^0.8.4',
+45 silly install resolved        'npm-latest': '^1.0.1',
+45 silly install resolved        openurl: '^1.1.1',
+45 silly install resolved        request: '^2.69.0',
+45 silly install resolved        scanf: '^0.7.0',
+45 silly install resolved        'simple-spinner': '0.0.5',
+45 silly install resolved        utile: '^0.3.0',
+45 silly install resolved        yargs: '^4.1.0' },
+45 silly install resolved     devDependencies: { chai: '^3.5.0', mocha: '^2.4.5' },
+45 silly install resolved     gitHead: '1d8c6cada9eda7c0eb03735dd5d0505d2d831a97',
+45 silly install resolved     bugs: { url: 'https://github.com/santinic/how2/issues' },
+45 silly install resolved     _id: 'how2@1.0.8',
+45 silly install resolved     _shasum: '9c4abd6ad9214b2a55d878c912ce9536c895f398',
+45 silly install resolved     _from: 'how2@*',
+45 silly install resolved     _npmVersion: '2.14.12',
+45 silly install resolved     _nodeVersion: '4.3.1',
+45 silly install resolved     _npmUser: { name: 'santinic', email: 'hireclaudio@gmail.com' },
+45 silly install resolved     dist:
+45 silly install resolved      { shasum: '9c4abd6ad9214b2a55d878c912ce9536c895f398',
+45 silly install resolved        tarball: 'http://registry.npmjs.org/how2/-/how2-1.0.8.tgz' },
+45 silly install resolved     maintainers: [ [Object] ],
+45 silly install resolved     _npmOperationalInternal:
+45 silly install resolved      { host: 'packages-6-west.internal.npmjs.com',
+45 silly install resolved        tmp: 'tmp/how2-1.0.8.tgz_1456238444677_0.917015404207632' },
+45 silly install resolved     directories: {},
+45 silly install resolved     _resolved: 'https://registry.npmjs.org/how2/-/how2-1.0.8.tgz' } ]
+46 info install how2@1.0.8 into /usr/local/lib
+47 info installOne how2@1.0.8
+48 verbose installOne of how2 to /usr/local/lib not in flight; installing
+49 verbose lock using /Users/lyc/.npm/_locks/how2-faec23195dfbccfe.lock for /usr/local/lib/node_modules/how2
+50 silly install write writing how2 1.0.8 to /usr/local/lib/node_modules/how2
+51 verbose unbuild lib/node_modules/how2
+52 silly gentlyRm /usr/local/lib/node_modules/how2 is being purged from base /usr/local
+53 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/how2
+54 verbose tar unpack /Users/lyc/.npm/how2/1.0.8/package.tgz
+55 verbose tar unpacking to /usr/local/lib/node_modules/how2
+56 silly gentlyRm /usr/local/lib/node_modules/how2 is being purged
+57 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/how2
+58 silly gunzTarPerm modes [ '755', '644' ]
+59 error tar.unpack untar error /Users/lyc/.npm/how2/1.0.8/package.tgz
+60 verbose unlock done using /Users/lyc/.npm/_locks/how2-faec23195dfbccfe.lock for /usr/local/lib/node_modules/how2
+61 verbose fstream_path /usr/local/lib/node_modules/how2
+62 verbose fstream_type Directory
+63 verbose fstream_class DirWriter
+64 verbose stack Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/how2'
+64 verbose stack     at Error (native)
+65 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25
+65 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53
+65 verbose fstream_stack FSReqWrap.oncomplete (fs.js:82:15)
+66 verbose cwd /Users/lyc/Documents/working_directory/cs186-DB/src/java
+67 error Darwin 14.1.0
+68 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "how2"
+69 error node v4.1.1
+70 error npm  v2.14.4
+71 error path /usr/local/lib/node_modules/how2
+72 error code EACCES
+73 error errno -13
+74 error syscall mkdir
+75 error Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/how2'
+75 error     at Error (native)
+75 error  { [Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/how2']
+75 error   errno: -13,
+75 error   code: 'EACCES',
+75 error   syscall: 'mkdir',
+75 error   path: '/usr/local/lib/node_modules/how2',
+75 error   fstream_type: 'Directory',
+75 error   fstream_path: '/usr/local/lib/node_modules/how2',
+75 error   fstream_class: 'DirWriter',
+75 error   fstream_stack:
+75 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25',
+75 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53',
+75 error      'FSReqWrap.oncomplete (fs.js:82:15)' ] }
+76 error Please try running this command again as root/Administrator.
+77 verbose exit [ -13, true ]
+78 verbose unbuild lib/node_modules/how2
+79 silly gentlyRm /usr/local/lib/node_modules/how2 is being purged from base /usr/local
+80 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/how2

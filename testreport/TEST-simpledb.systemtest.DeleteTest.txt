@@ -1,0 +1,53 @@
+Testsuite: simpledb.systemtest.DeleteTest
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.218 sec
+
+Testcase: testEquals took 0.074 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.systemtest.DeleteTest.applyPredicate(DeleteTest.java:24)
+	at simpledb.systemtest.FilterBase.runTransactionForPredicate(FilterBase.java:30)
+	at simpledb.systemtest.FilterBase.validatePredicate(FilterBase.java:40)
+	at simpledb.systemtest.FilterBase.testEquals(FilterBase.java:63)
+
+Testcase: testLessThan took 0.025 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.systemtest.DeleteTest.applyPredicate(DeleteTest.java:24)
+	at simpledb.systemtest.FilterBase.runTransactionForPredicate(FilterBase.java:30)
+	at simpledb.systemtest.FilterBase.validatePredicate(FilterBase.java:40)
+	at simpledb.systemtest.FilterBase.testLessThan(FilterBase.java:68)
+
+Testcase: testLessThanOrEq took 0.017 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.systemtest.DeleteTest.applyPredicate(DeleteTest.java:24)
+	at simpledb.systemtest.FilterBase.runTransactionForPredicate(FilterBase.java:30)
+	at simpledb.systemtest.FilterBase.validatePredicate(FilterBase.java:40)
+	at simpledb.systemtest.FilterBase.testLessThanOrEq(FilterBase.java:73)
+
+Testcase: testGreaterThan took 0.013 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.systemtest.DeleteTest.applyPredicate(DeleteTest.java:24)
+	at simpledb.systemtest.FilterBase.runTransactionForPredicate(FilterBase.java:30)
+	at simpledb.systemtest.FilterBase.validatePredicate(FilterBase.java:40)
+	at simpledb.systemtest.FilterBase.testGreaterThan(FilterBase.java:78)
+
+Testcase: testGreaterThanOrEq took 0.012 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.systemtest.DeleteTest.applyPredicate(DeleteTest.java:24)
+	at simpledb.systemtest.FilterBase.runTransactionForPredicate(FilterBase.java:30)
+	at simpledb.systemtest.FilterBase.validatePredicate(FilterBase.java:40)
+	at simpledb.systemtest.FilterBase.testGreaterThanOrEq(FilterBase.java:83)
+

@@ -1,0 +1,16 @@
+Testsuite: simpledb.systemtest.EvictionTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.119 sec
+------------- Standard Output ---------------
+EvictionTest creating large table
+EvictionTest scanning large table
+------------- ---------------- ---------------
+
+Testcase: testHeapFileScanWithManyPages took 1.051 sec
+	Caused an ERROR
+The BufferPool is full!
+simpledb.DbException: The BufferPool is full!
+	at simpledb.BufferPool.getPage(BufferPool.java:60)
+	at simpledb.HeapFile$1.next(HeapFile.java:166)
+	at simpledb.SeqScan.next(SeqScan.java:108)
+	at simpledb.systemtest.EvictionTest.testHeapFileScanWithManyPages(EvictionTest.java:32)
+

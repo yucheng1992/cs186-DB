@@ -1,0 +1,16 @@
+Testsuite: simpledb.InsertTest
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.148 sec
+
+Testcase: getTupleDesc took 0.068 sec
+	Caused an ERROR
+expected:<INT_TYPE(null)> but was:<null>
+java.lang.AssertionError: expected:<INT_TYPE(null)> but was:<null>
+	at simpledb.InsertTest.getTupleDesc(InsertTest.java:42)
+
+Testcase: getNext took 0.007 sec
+	Caused an ERROR
+null
+java.util.NoSuchElementException
+	at simpledb.Operator.next(Operator.java:28)
+	at simpledb.InsertTest.getNext(InsertTest.java:51)
+

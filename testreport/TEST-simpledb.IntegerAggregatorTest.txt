@@ -1,0 +1,38 @@
+Testsuite: simpledb.IntegerAggregatorTest
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.107 sec
+
+Testcase: mergeSum took 0.02 sec
+	Caused an ERROR
+please implement me for proj2
+java.lang.UnsupportedOperationException: please implement me for proj2
+	at simpledb.IntegerAggregator.iterator(IntegerAggregator.java:50)
+	at simpledb.IntegerAggregatorTest.mergeSum(IntegerAggregatorTest.java:75)
+
+Testcase: mergeMin took 0.003 sec
+	Caused an ERROR
+please implement me for proj2
+java.lang.UnsupportedOperationException: please implement me for proj2
+	at simpledb.IntegerAggregator.iterator(IntegerAggregator.java:50)
+	at simpledb.IntegerAggregatorTest.mergeMin(IntegerAggregatorTest.java:91)
+
+Testcase: mergeMax took 0.003 sec
+	Caused an ERROR
+please implement me for proj2
+java.lang.UnsupportedOperationException: please implement me for proj2
+	at simpledb.IntegerAggregator.iterator(IntegerAggregator.java:50)
+	at simpledb.IntegerAggregatorTest.mergeMax(IntegerAggregatorTest.java:107)
+
+Testcase: mergeAvg took 0.002 sec
+	Caused an ERROR
+please implement me for proj2
+java.lang.UnsupportedOperationException: please implement me for proj2
+	at simpledb.IntegerAggregator.iterator(IntegerAggregator.java:50)
+	at simpledb.IntegerAggregatorTest.mergeAvg(IntegerAggregatorTest.java:123)
+
+Testcase: testIterator took 0.002 sec
+	Caused an ERROR
+please implement me for proj2
+java.lang.UnsupportedOperationException: please implement me for proj2
+	at simpledb.IntegerAggregator.iterator(IntegerAggregator.java:50)
+	at simpledb.IntegerAggregatorTest.testIterator(IntegerAggregatorTest.java:143)
+

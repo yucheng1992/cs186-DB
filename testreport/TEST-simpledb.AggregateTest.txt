@@ -1,0 +1,64 @@
+Testsuite: simpledb.AggregateTest
+Tests run: 8, Failures: 1, Errors: 7, Skipped: 0, Time elapsed: 0.138 sec
+
+Testcase: rewind took 0.025 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.AggregateTest.rewind(AggregateTest.java:103)
+
+Testcase: sumStringGroupBy took 0.003 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.TestUtil.matchAllTuples(TestUtil.java:138)
+	at simpledb.AggregateTest.sumStringGroupBy(AggregateTest.java:132)
+
+Testcase: sumAggregate took 0.002 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.TestUtil.matchAllTuples(TestUtil.java:138)
+	at simpledb.AggregateTest.sumAggregate(AggregateTest.java:143)
+
+Testcase: avgAggregate took 0.003 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.TestUtil.matchAllTuples(TestUtil.java:138)
+	at simpledb.AggregateTest.avgAggregate(AggregateTest.java:154)
+
+Testcase: maxAggregate took 0.002 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.TestUtil.matchAllTuples(TestUtil.java:138)
+	at simpledb.AggregateTest.maxAggregate(AggregateTest.java:165)
+
+Testcase: minAggregate took 0.002 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.TestUtil.matchAllTuples(TestUtil.java:138)
+	at simpledb.AggregateTest.minAggregate(AggregateTest.java:176)
+
+Testcase: countStringAggregate took 0.002 sec
+	Caused an ERROR
+Operator not yet open
+java.lang.IllegalStateException: Operator not yet open
+	at simpledb.Operator.hasNext(Operator.java:16)
+	at simpledb.TestUtil.matchAllTuples(TestUtil.java:138)
+	at simpledb.AggregateTest.countStringAggregate(AggregateTest.java:121)
+
+Testcase: getTupleDesc took 0.003 sec
+	Caused an ERROR
+expected:<INT_TYPE(null),INT_TYPE(null)> but was:<null>
+java.lang.AssertionError: expected:<INT_TYPE(null),INT_TYPE(null)> but was:<null>
+	at simpledb.AggregateTest.getTupleDesc(AggregateTest.java:93)
+

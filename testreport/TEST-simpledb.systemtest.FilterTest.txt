@@ -1,0 +1,8 @@
+Testsuite: simpledb.systemtest.FilterTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.488 sec
+
+Testcase: testEquals took 0.188 sec
+Testcase: testLessThan took 0.093 sec
+Testcase: testLessThanOrEq took 0.058 sec
+Testcase: testGreaterThan took 0.046 sec
+Testcase: testGreaterThanOrEq took 0.047 sec

@@ -1,0 +1,26 @@
+Testsuite: simpledb.HeapPageWriteTest
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.138 sec
+
+Testcase: testDirty took 0.044 sec
+	Caused an ERROR
+expected:<true> but was:<false>
+java.lang.AssertionError: expected:<true> but was:<false>
+	at simpledb.HeapPageWriteTest.testDirty(HeapPageWriteTest.java:39)
+
+Testcase: addTuple took 0.006 sec
+	Caused an ERROR
+expected:<483> but was:<484>
+java.lang.AssertionError: expected:<483> but was:<484>
+	at simpledb.HeapPageWriteTest.addTuple(HeapPageWriteTest.java:60)
+
+Testcase: deleteNonexistentTuple took 0.004 sec
+	Caused an ERROR
+Expected exception: simpledb.DbException
+java.lang.AssertionError: Expected exception: simpledb.DbException
+
+Testcase: deleteTuple took 0.019 sec
+	Caused an ERROR
+expected:<486> but was:<484>
+java.lang.AssertionError: expected:<486> but was:<484>
+	at simpledb.HeapPageWriteTest.deleteTuple(HeapPageWriteTest.java:117)
+
