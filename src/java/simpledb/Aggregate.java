@@ -15,6 +15,9 @@ public class Aggregate extends Operator {
     private int gfield;
     private Aggregator.Op aop;
     private DbIterator iter;
+    private Aggregator agg;
+    private TupleDesc td;
+
     /**
      * Constructor.
      * 
@@ -39,6 +42,13 @@ public class Aggregate extends Operator {
       this.afield = afield;
       this.gfield = gfield;
       this.aop = aop;
+      this.td = child.getTupleDesc();
+      Type gbfieldtype = (gfield < 0 ? null : child.getTupleDesc().getFieldType(gfield));
+      if (td.getFieldType(afield) == Type.INT_TYPE) {
+        agg = new IntegerAggregator(gfield, gbfieldtype, afield, aop);
+      } else {
+        agg = new StringAggregator(gfield, gbfieldtype, afield, aop);
+      }
     }
 
     /**
@@ -48,11 +58,7 @@ public class Aggregate extends Operator {
      * */
     public int groupField() {
       // some code goes here
-      if (gfield != -1) {
-        return gfield;
-      } else {
-        return Aggregator.NO_GROUPING;  
-      }
+      return gfield;
     }
 
     /**
@@ -102,6 +108,11 @@ public class Aggregate extends Operator {
 	      // some code goes here
         super.open();
         child.open();
+        while (child.hasNext()) {
+          agg.mergeTupleIntoGroup(child.next());
+        }
+        iter = agg.iterator();
+        iter.open();
     }
 
     /**
@@ -113,20 +124,16 @@ public class Aggregate extends Operator {
      */
     protected Tuple fetchNext() throws TransactionAbortedException, DbException {
       // some code goes here
-      if (child.hasNext()) {
-        if (gfield == -1) {
-          return null;    
-        } else {
-          return null;
-        }
-      } else {
-        return null;
+      if (iter.hasNext()) {
+        return iter.next();
       }
+      return null;
     }
 
     public void rewind() throws DbException, TransactionAbortedException {
 	    // some code goes here
       child.rewind();
+      iter.rewind();
     }
 
     /**
@@ -142,7 +149,6 @@ public class Aggregate extends Operator {
      */
     public TupleDesc getTupleDesc() {
       // some code goes here
-      TupleDesc td = child.getTupleDesc();
       if (gfield == -1) {
         Type[] type = {td.getFieldType(afield)};
         String[] aggName = {String.format("%s (%s)", nameOfAggregatorOp(aop), td.getFieldName(afield))};
@@ -158,6 +164,7 @@ public class Aggregate extends Operator {
 	    // some code goes here
       super.close();
       child.close();
+      iter.close();
     }
 
     @Override
