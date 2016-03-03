@@ -1,5 +1,7 @@
 package simpledb;
 
+import java.io.IOException;
+
 /**
  * Inserts tuples read from the child operator into the tableid specified in the
  * constructor
@@ -7,6 +9,13 @@ package simpledb;
 public class Insert extends Operator {
 
     private static final long serialVersionUID = 1L;
+
+    private TransactionId tid;
+    private DbIterator child;
+    private int tableid;
+    private TupleDesc td;
+    private int nums;
+    private boolean insertTwice;
 
     /**
      * Constructor.
@@ -24,23 +33,34 @@ public class Insert extends Operator {
     public Insert(TransactionId t,DbIterator child, int tableid)
             throws DbException {
         // some code goes here
+      this.tid = t;
+      this.child = child;
+      this.tableid = tableid;
+      this.nums = 0;
+      this.td = new TupleDesc(new Type[] {Type.INT_TYPE}, new String[] {"Number of inserted tuples"});
+      this.insertTwice = false;
     }
 
     public TupleDesc getTupleDesc() {
         // some code goes here
-        return null;
+        return this.td;
     }
 
     public void open() throws DbException, TransactionAbortedException {
         // some code goes here
+        super.open();
+        child.open();
     }
 
     public void close() {
         // some code goes here
+        super.close();
+        child.close();
     }
 
     public void rewind() throws DbException, TransactionAbortedException {
         // some code goes here
+        child.rewind();
     }
 
     /**
@@ -58,17 +78,35 @@ public class Insert extends Operator {
      */
     protected Tuple fetchNext() throws TransactionAbortedException, DbException {
         // some code goes here
+      if (insertTwice) {
         return null;
+      }
+      BufferPool bufferPool = Database.getBufferPool();
+      while (child.hasNext()) {
+        try {
+          bufferPool.insertTuple(tid, tableid, child.next());
+        } catch (IOException e) {
+
+        }
+        
+        nums += 1;
+      }
+      Tuple tuple = new Tuple(td);
+      Field field = new IntField(nums);
+      tuple.setField(0, field);
+      insertTwice = true;
+      return tuple;
     }
 
     @Override
     public DbIterator[] getChildren() {
         // some code goes here
-        return null;
+        return new DbIterator[]{child};
     }
 
     @Override
     public void setChildren(DbIterator[] children) {
         // some code goes here
+        child = children[0];
     }
 }

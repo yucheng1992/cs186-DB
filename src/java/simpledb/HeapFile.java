@@ -17,7 +17,6 @@ public class HeapFile implements DbFile {
 
     private File file;
     private TupleDesc tupleDesc;
-
     /**
      * Constructs a heap file backed by the specified file.
      * 
@@ -97,7 +96,38 @@ public class HeapFile implements DbFile {
     public ArrayList<Page> insertTuple(TransactionId tid, Tuple t)
             throws DbException, IOException, TransactionAbortedException {
         // some code goes here
-        return null;
+      BufferPool bufferpool = Database.getBufferPool();
+      if (t == null) {
+        throw new DbException("Tuple is null!");
+      }
+      ArrayList<Page> pages = new ArrayList<Page>();
+      for (int i = 0; i < numPages(); i++) {
+        PageId pid = new HeapPageId(getId(), i);
+        HeapPage page = (HeapPage) bufferpool.getPage(tid, pid, Permissions.READ_WRITE);
+        if (page.getNumEmptySlots() != 0) {
+          page.insertTuple(t);
+          pages.add(page);
+          break;
+        }
+      }
+      if (pages.isEmpty()) {
+        PageId pid = new HeapPageId(getId(), numPages());
+        
+        try {
+          byte[] bytes = HeapPage.createEmptyPageData();
+          RandomAccessFile file = new RandomAccessFile(getFile(), "rw");
+          file.seek(pid.pageNumber()*BufferPool.PAGE_SIZE);
+          file.write(bytes);
+          file.close();
+        } catch (FileNotFoundException e) {
+          //do nothing
+          e.printStackTrace();
+        }
+        HeapPage page = (HeapPage) bufferpool.getPage(tid, pid, Permissions.READ_WRITE);
+        page.insertTuple(t);
+        pages.add(page);      
+      }
+      return pages;
         // not necessary for proj1
     }
 
@@ -105,8 +135,11 @@ public class HeapFile implements DbFile {
     public Page deleteTuple(TransactionId tid, Tuple t) throws DbException,
             TransactionAbortedException {
         // some code goes here
-        return null;
-        // not necessary for proj1
+      BufferPool bufferpool = Database.getBufferPool();
+      PageId pid = t.getRecordId().getPageId();
+      HeapPage page = (HeapPage) bufferpool.getPage(tid, pid, Permissions.READ_WRITE);
+      page.deleteTuple(t);
+      return page;
     }
 
     // see DbFile.java for javadocs

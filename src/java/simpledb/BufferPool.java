@@ -128,6 +128,9 @@ public class BufferPool {
         throws DbException, IOException, TransactionAbortedException {
         // some code goes here
         // not necessary for proj1
+      DbFile hf = Database.getCatalog().getDbFile(tableId);
+      hf.insertTuple(tid, t);
+
     }
 
     /**
@@ -147,6 +150,8 @@ public class BufferPool {
         throws DbException, TransactionAbortedException {
         // some code goes here
         // not necessary for proj1
+      DbFile hf = Database.getCatalog().getDbFile(t.getRecordId().getPageId().getTableId());
+      hf.deleteTuple(tid, t);
     }
 
     /**
